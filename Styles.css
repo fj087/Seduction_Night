@@ -1,0 +1,118 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+   
+   
+    font-family: "Playfair Display", serif;
+    
+}
+
+
+
+#navmenu{
+   
+    background-color:rgb(240, 227, 233);
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    
+    
+   
+} 
+ 
+
+.navbar-collapse {
+    padding: 0;
+    margin: 0;
+    
+    
+}
+
+
+
+.navbar-nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  
+   
+}
+
+
+
+
+.search-form {
+    display: flex;
+
+    margin-left: 1px; /* Mueve el formulario de búsqueda a la derecha */
+}
+
+/* revisar el magnifice lupa*/
+.search-input {
+    width: 10px;
+    margin: 1px auto;
+  /*no se ve el input*/
+  visibility: hidden;
+}
+.search-button {
+    background-color: transparent; /* Fondo transparente para el botón de búsqueda */
+}
+
+
+.text-overlay {
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%); /*move el texto hacia arriba y la izquierda para centrarlo*/
+ color: white;
+ font-size: 30px;
+ text-decoration: none;
+}
+
+
+.carousel-inner img {
+    margin-left: center;
+    margin-right: center;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+
+
+
+footer {
+    
+    bottom: 0;
+    width: 100%;
+    background-color:rgb(240, 227, 233) !important;
+    padding: 10px 0;
+    text-align: center;
+    color: black;
+    height: 90px;
+   
+}
+
+
+.p{
+    display: inline-block;
+}
+
+.nav-item,
+.nav-link:hover{
+    color: white !important;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+
