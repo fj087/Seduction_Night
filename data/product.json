@@ -1,0 +1,31 @@
+[
+  {
+    "id": "set-sensacion",
+    "title": "Set sensación",
+    "price": 12150,
+    "oldPrice": 13500,
+    "discount": 10,
+    "images": [ "img/Ropa Interior/ropaintrojaGrnd1.jpg",
+      "img/Ropa Interior/IMG_2009.jpg"
+    ],
+    "description": "Set elegante y cómodo."
+  },
+  {
+    "id": "set-encage",
+    "title": "Set encaje rojo",
+    "price": 13500,
+    "oldPrice": 15000,
+    "discount": 10,
+    "images": [ "img/Ropa Interior/ropaintroroja1 (3).jpg" ],
+    "description": "Encaje rojo con diseño sensual."
+  },
+  {
+    "id": "set-blanco",
+    "title": "Set encaje blanco",
+    "price": 12000,
+    "oldPrice": 13500,
+    "discount": 10,
+    "images": [  "img/Ropa Interior/ropaintrojaGrnd1.jpg" ],
+    "description": "Encaje blanco delicado."
+  }
+]

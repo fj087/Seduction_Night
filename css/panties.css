@@ -1,0 +1,26 @@
+/* Solo PANTIES */
+.product-card { border: none; }
+.product-img { height: 260px; object-fit: cover; }
+
+.product-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.product-price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.product-new-price {
+  font-weight: 700;
+  font-style: normal;   /* quita cursiva */
+}
+
+.product-old-price {
+  color: #777;
+  text-decoration: line-through;
+  font-style: normal;   /* quita cursiva */
+  font-size: 0.9rem;
+}

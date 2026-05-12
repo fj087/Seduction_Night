@@ -14,58 +14,111 @@
     <!--font awesome-->
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg" id="navmenu">
-        <div class="container">
-            <a class="navbar-brand" href="#"></a> <!--- # recarga la página actual --->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav d-flex flex-row mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="lingerie.html">LENCERÍA</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <!--El navbarDropdown-->
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            SALES
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="accesories.html">ACCESORIES</a></li>
-                            <li><a class="dropdown-item" href="panties.html">PANTIES</a></li>
-                            <li><a class="dropdown-item" href="babydolls.html">BABYDOLLS</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-center d-flex flex-column align-items-center" href="Seduction.Night.html">
-                            <div class="fs-4"><strong>SEDUCTION NIGHT</strong></div>
-                            <div class="fs-6 mt-1"><em>LINGERIE</em></div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Envios&Entregas.html">ENVÍOS & ENTREGAS</a>
-                    </li>
-                </ul>
-            </div>
-            <form action="/search" method="get" class="search-form">
-                <input type="text" name="query" class="form-control search-input" placeholder="Buscar...">
-                <button type="submit" class="search-button">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-            </form>
-        </div>
-        </div>
-        </div>
-        </div>
-    </nav>
-    <div class="container-fluid my-3  d-flex" id="fotosinicio">
-        <img src="img/seduction5.jpg" class="rounded w-25 me-1" alt="imagen inicio">
-        <img src="img/img inicio 2.jpg" class="rounded w-25 me-1" alt="imagen inicio">
-        <img src="img/img inicio3.jpg" class="rounded w-25 me-1" alt="imagen inicio">
-        <img src="img/imagen inicio4.jpg" class="rounded w-25 me-1" alt="imagen inicio">
+<body> 
+<!-- TOP BAR -->
+<nav id="navmenu1" class="navbar p-0">
+  <div class="container-fluid topbar d-flex justify-content-end align-items-center gap-3">
+    
+    <a class="social-link"
+       href="https://www.facebook.com/"
+       target="_blank"
+       aria-label="Facebook">
+      <i class="fa-brands fa-square-facebook"></i>
+    </a>
+
+    <a class="social-link"
+       href="https://www.instagram.com/seduction.night_lingerie?igsh=MTVjN2VvdGZmMTN3cQ=="
+       target="_blank"
+       aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a class="social-link"
+       href="cart.html"
+       aria-label="Carrito">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+
+  </div>
+</nav>
+
+<!-- MAIN NAVIGATION -->
+<nav id="navmenu" class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="lingerie.html">LENCERÍA</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false">
+            SALES
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="accesories.html">ACCESORIES</a></li>
+            <li><a class="dropdown-item" href="panties.html">PANTIES</a></li>
+            <li><a class="dropdown-item" href="babydolls.html">BABYDOLLS</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-center d-flex flex-column align-items-center" href="Seduction.Night.html">
+            <div class="fs-4"><strong>SEDUCTION NIGHT</strong></div>
+            <div class="fs-6 mt-1"><em>LINGERIE</em></div>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="Envios&Entregas.html">ENVÍOS & ENTREGAS</a>
+        </li>
+      </ul>
+
+      <form action="/search" method="get" class="search-form">
+        <input type="text" name="query" class="form-control search-input" placeholder="Buscar...">
+        <button type="submit" class="search-button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+
     </div>
+  </div>
+</nav>
+
+<div id="carouselinicio"
+     class="carousel slide carousel-fade"
+     data-bs-ride="carousel"
+     data-bs-interval="3000"
+     data-bs-pause="false">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/img inicio 2.jpg" class="d-block w-100" alt="Inicio 1">
+    </div>
+    <div class="carousel-item">
+      <img src="img/img inicio3.jpg" class="d-block w-100" alt="Inicio 2">
+    </div>
+    <div class="carousel-item">
+      <img src="img/Lingerie/IMG_0867.jpg" class="d-block w-100" alt="Inicio 3">
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselinicio" data-bs-slide="prev">
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselinicio" data-bs-slide="next">
+  </button>
+</div>
+
+</div>
+
+</div>
     <div class="container">
         <div class="row">
             <div class="col-md-12 d-flex align-items-center justify-content-center">
@@ -84,7 +137,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid my-3 p-0 d-flex">
+    <div class="container-fluid p-0 d-flex">
         <div class="row justify-content-center">
             <div class="col-12 text-center">
                 <h3>Compras por categoría</h3><br></br>
@@ -127,15 +180,15 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="img/Accesorios/IMG_2024.jpg" class="d-block w-100" alt="Seduction1">
-                            <a href="Sales.html" class="text-overlay">ACCESORIOS</a>
+                            <a href="accesories.html" class="text-overlay">ACCESORIOS</a>
                         </div>
                         <div class="carousel-item">
                             <img src="img/Accesorios/IMG_2027.jpg" class="d-block w-100" alt="Seduction2">
-                            <a href="Sales.html" class="text-overlay">ACCESORIOS</a>
+                            <a href="accesories.html" class="text-overlay">ACCESORIOS</a>
                         </div>
                         <div class="carousel-item">
                             <img src="img/Accesorios/IMG_1545.jpg" class="d-block w-100" alt="Seduction2">
-                            <a href="Sales.html" class="text-overlay">ACCESORIOS</a>
+                            <a href="accesories.html" class="text-overlay">ACCESORIOS</a>
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselSeduction2"
@@ -156,6 +209,7 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="img/Ropa Interior/IMG_2018.jpg" class="d-block w-100" alt="Seduction1">
+                            <a href="panties.html" class="text-overlay">PANTIES</a>
                         </div>
                         <div class="carousel-item">
                             <img src="img/Ropa Interior/ropaintroja1.jpg" class="d-block w-100" alt="Seduction2">
@@ -206,7 +260,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 ">
-                    <h7> @2024, Seduction Night Lingerie</h7>
+                    <h7 class="text-muted"></h7 @2024, Seduction Night Lingerie</h7>
                 </div>
             </div>
         </div>

@@ -1,118 +1,539 @@
+/* RESET */
 *{
-    margin: 0 auto;
-    padding: 0;
-    box-sizing: border-box;
-   
-   
-    font-family: "Playfair Display", serif;
-    
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+font-family: "Playfair Display", serif;
 }
 
-
-
-#navmenu{
-   
-    background-color:rgb(240, 227, 233);
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0%;
-    width: 100%;
-    
-    
-   
-} 
- 
-
-.navbar-collapse {
-    padding: 0;
-    margin: 0;
-    
-    
-}
-
-
-
-.navbar-nav{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
+:root{
+--topbar-h: 27px;
+  --mainnav-h: 70px;
+    --nav-gap:16px; /* <- separación entre navmenu1 y navmenu */
   
-   
+}
+/* BODY must account for BOTH fixed bars */
+body{
+  margin: 0;
+   padding-top: calc(var(--topbar-h) + var(--nav-gap) + var(--mainnav-h));
+}
+
+/* TOP BAR */
+#navmenu1{
+  background-color: rgb(176, 106, 155);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--topbar-h);
+  z-index: 5000;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+
+   overflow: hidden;
+}
+#navmenu1 .topbar{
+  height: 100%;
+  padding: 0 16px;
+}
+
+#navmenu1 .social-link{
+  color: white;
+  font-size: 18px;
+  line-height: 1;      /* prevents vertical “extra space” */
+  display: inline-flex;
+  align-items: center;
+}
+
+/* MAIN NAVBAR */
+#navmenu{
+  background-color: rgb(240, 227, 233);
+  position: fixed;
+top: calc(var(--topbar-h) + var(--nav-gap));
+  left: 0;
+  width: 100%;
+  min-height: var(--mainnav-h);
+  z-index: 3500;
+  padding: 6px 0;
+}
+
+/* container-fluid is what you use in HTML */
+#navmenu .container-fluid{
+  min-height: var(--mainnav-h);
+  display: flex;
+  align-items: center;
+  position: relative; /* anchor for absolute collapse panel */
 }
 
 
-
-
-.search-form {
-    display: flex;
-
-    margin-left: 1px; /* Mueve el formulario de búsqueda a la derecha */
+/* Keep hamburger at far right */
+#navmenu .navbar-toggler{
+  margin-left: auto;
 }
 
-/* revisar el magnifice lupa*/
-.search-input {
-    width: 10px;
-    margin: 1px auto;
-  /*no se ve el input*/
-  visibility: hidden;
-}
-.search-button {
-    background-color: transparent; /* Fondo transparente para el botón de búsqueda */
+/* reset collapse spacing */
+#navmenu .navbar-collapse{
+  background: rgb(240, 227, 233);
+  margin: 0;
+  padding: 0;
 }
 
-
-.text-overlay {
- position: absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%); /*move el texto hacia arriba y la izquierda para centrarlo*/
- color: white;
- font-size: 30px;
- text-decoration: none;
+/* nav list base */
+#navmenu .navbar-nav{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+/* Base collapse reset */
+.navbar-collapse{
+  padding: 0;
+  margin: 0;
 }
 
-
-.carousel-inner img {
-    margin-left: center;
-    margin-right: center;
-    padding: 10px;
-    border-radius: 50%;
+/* Base nav list */
+.navbar-nav{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
+/* Link styling */
+#navmenu .nav-link{
+  color: black !important;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
+/* Hover only (your old selector was affecting .nav-item always) */
+#navmenu .nav-link:hover{
+  color: white !important;
+}
 
+/* ===== DESKTOP (>= 992px) ===== */
+@media (min-width: 992px){
+  #navbar.nave-collapse{
+    display: flex !important;
+    justify-content: flex-end;
+  }
 
-footer {
+  #navmenu .navbar-nav{
+    flex-direction: row;
     
-    bottom: 0;
-    width: 100%;
-    background-color:rgb(240, 227, 233) !important;
-    padding: 10px 0;
-    text-align: center;
-    color: black;
-    height: 90px;
+  }
+}
+
+/* ===== MOBILE (< 992px): dropdown under hamburger + centered ===== */
+@media (max-width: 991.98px){
+     
+  /* The dropdown panel */
+  #navmenu .navbar-collapse{
+    position: absolute;
+    top: calc(100% - 1px); /* removes the visible “gap line” */
+    left: 0;
+    right: 0;                /* full width under navbar */
+    background: rgb(240, 227, 233);
+    padding: 12px 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      border-top: 1px solid rgba(0,0,0,0.08);
+      z-index: 3600;
    
+  }
+  
+        #fotosinicio{
+    display: flex !important;
+   flex-direction: column !important; /* stack vertically */
+    align-items: stretch important; /* stretch to full width */
+    justify-content: flex-start;
+    gap: 10px;
+
+  #fotosinicio > img{
+   width: 100% !important; /* full width on mobile */
+   max-width: 100%;
+   margin-right: 0;
+   display: block;
+  }
+}
+  
+
+  /* Stack items and center them */
+  #navmenu .navbar-collapse .navbar-nav{
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  #navmenu .navbar-collapse .nav-link{
+    width: 100%;
+    text-align: center;
+  }
 }
 
+/* =========================
+   SEARCH FORM
+========================= */
+.search-form{
+  display: flex;
+  gap: 8px;
+}
 
+/* Large screens: search form on the right side of navbar */
+@media (min-width: 992px){
+  .search-form{
+    display: flex !important;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    width: auto;
+  }
+}
+
+/* Small screens: search form at the top right of navbar */
+@media (max-width: 991.98px){
+  .search-form{
+    display: flex;
+    width: auto;
+    position: absolute;
+    top: -40px;
+    right: 85px;
+    gap: 8px;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Search input and button styling */
+.search-input{
+  width: 150px;
+  padding: 8px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+}
+
+.search-input::placeholder{
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Small screens: reduce search input width */
+@media (max-width: 991.98px){
+  .search-input{
+    width: 120px;
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+}
+
+.search-button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: black;
+  font-size: 16px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-button:hover{
+  opacity: 0.7;
+}
+
+/* =========================
+   TEXT OVERLAY
+========================= */
+.text-overlay{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+/* =========================
+   CAROUSEL
+========================= */
+.carousel-inner img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+/*Hero carousel images only squere, no padding*/
+#carouselinicio .carousel-item img{
+  border-radius: 0 !important; /* override if needed */
+  padding: 0 !important;
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(240, 227, 233) !important;
+  padding: 10px 0;
+  text-align: center;
+  color: black;
+  height: 90px;
+}
+
+/* If you meant paragraph tags, use p not .p (class). Keeping yours as-is: */
 .p{
-    display: inline-block;
+  display: inline-block;
 }
 
-.nav-item,
-.nav-link:hover{
-    color: white !important;
-    margin: 0 auto;
+/* Responsive tweaks for very small screens */
+@media (max-width: 480px){
+  #navmenu{
+    padding: 10px 20px;
+  }
+
+  .navbar-nav{
+    gap: 10px;
+    padding: 10px 20px;
+  }
+}
+/* =========================
+   GLOBAL RESET
+========================= */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Playfair Display", serif;
 }
 
+/* =========================
+   NAVBAR (CLEAN + FIXED)
+========================= */
+#navmenu{
+  background-color: rgb(240, 227, 233);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  z-index: 1000;
+}
 
+/* Let Bootstrap layout work; we only align items */
+#navmenu .container{
+  display: flex !important;
+  align-items: center;
+  position: relative; /* anchor for absolute elements (collapse + search form) */
+}
 
+/* Keep hamburger at far right */
+#navmenu .navbar-toggler{
+  margin-left: auto !important;
+}
 
+/* Base collapse reset */
+.navbar-collapse{
+  padding: 0;
+  margin: 0;
+}
 
+/* Base nav list */
+.navbar-nav{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
 
+/* Link styling */
+#navmenu .nav-link{
+  color: black !important;
+  margin: 0;
+}
 
+/* Hover only (your old selector was affecting .nav-item always) */
+#navmenu .nav-link:hover{
+  color: white !important;
+}
+
+/* ===== DESKTOP (>= 992px) ===== */
+@media (min-width: 992px){
+  .navbar-collapse{
+    display: flex !important;
+    justify-content: flex-end;
+  }
+
+  .navbar-nav{
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+/* ===== MOBILE (< 992px): dropdown under hamburger + centered ===== */
+@media (max-width: 991.98px){
+  /* The dropdown panel */
+  #navmenu .navbar-collapse{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;                /* full width under navbar */
+    background: rgb(240, 227, 233);
+    padding: 12px 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    z-index: 999;
+  }
+
+  /* Stack items and center them */
+  #navmenu .navbar-collapse .navbar-nav{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+/* =========================
+   SEARCH FORM
+========================= */
+.search-form{
+  display: flex;
+  gap: 8px;
+}
+
+/* Large screens: search form on the right side of navbar */
+@media (min-width: 992px){
+  .search-form{
+    display: flex !important;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+    width: auto;
+  }
+}
+
+/* Small screens: search form at the top right of navbar */
+@media (max-width: 991.98px){
+  .search-form{
+    display: flex;
+    width: auto;
+    position: absolute;
+    top: -40px;
+    right: 85px;
+    gap: 8px;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Search input and button styling */
+.search-input{
+  width: 150px;
+  padding: 8px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+}
+
+.search-input::placeholder{
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Small screens: reduce search input width */
+@media (max-width: 991.98px){
+  .search-input{
+    width: 120px;
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+}
+
+.search-button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: black;
+  font-size: 16px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-button:hover{
+  opacity: 0.7;
+}
+
+/* =========================
+   TEXT OVERLAY
+========================= */
+.text-overlay{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+/* =========================
+   CAROUSEL
+========================= */
+.carousel-inner img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border-radius: 90%;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(240, 227, 233) !important;
+  padding: 10px 0;
+  text-align: center;
+  color: black;
+  height: 90px;
+}
+
+/* If you meant paragraph tags, use p not .p (class). Keeping yours as-is: */
+.p{
+  display: inline-block;
+}
+
+/* Responsive tweaks for very small screens */
+@media (max-width: 480px){
+  #navmenu{
+    padding: 10px 20px;
+  }
+
+  .navbar-nav{
+    gap: 10px;
+    padding: 10px 20px;
+  }
+}
