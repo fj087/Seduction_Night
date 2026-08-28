@@ -1,4 +1,4 @@
-console.log("pantiess.js cargó ✅");
+console.log("panties.js cargó ✅");
 
 const grid = document.getElementById("pantiesGrid");
 
