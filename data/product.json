@@ -1,4 +1,4 @@
-[
+  [
   {
     "id": "set-sensacion",
     "title": "Set sensación",
@@ -26,6 +26,26 @@
     "oldPrice": 13500,
     "discount": 10,
     "images": [  "img/Ropa Interior/ropaintrojaGrnd1.jpg" ],
+    "description": "Encaje blanco delicado."
+  },
+   {
+    "id": "set-lenceria",
+    "title": "Set encaje blanco con flores",
+    "price": 12000,
+    "oldPrice": 23500,
+    "discount": 10,
+    "images": ["img/Lingerie/Foto 5-9-24, 4 42 12 p.m. (1).jpg",
+              "img/Lingerie/Foto 5-9-24, 4 42 12 p.m. (2).jpg"
+              ],
+    "description": "Encaje blanco delicado."
+  },
+{
+    "id": "set-lenceria",
+    "title": "Set encaje blanco",
+    "price": 12000,
+    "oldPrice": 23500,
+    "discount": 10,
+    "images": ["img/Lingerie/Foto 5-9-24, 4 42 13 p.m. (13).jpg"],
     "description": "Encaje blanco delicado."
   }
 ]

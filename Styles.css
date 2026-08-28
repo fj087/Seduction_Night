@@ -1,539 +1,600 @@
-/* RESET */
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-font-family: "Playfair Display", serif;
-}
+/* =====================================================
+   RESET
+===================================================== */
 
-:root{
---topbar-h: 27px;
-  --mainnav-h: 70px;
-    --nav-gap:16px; /* <- separación entre navmenu1 y navmenu */
-  
-}
-/* BODY must account for BOTH fixed bars */
-body{
-  margin: 0;
-   padding-top: calc(var(--topbar-h) + var(--nav-gap) + var(--mainnav-h));
-}
-
-/* TOP BAR */
-#navmenu1{
-  background-color: rgb(176, 106, 155);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--topbar-h);
-  z-index: 5000;
-  display: flex;
-  align-items: center;
-  padding: 0 16px;
-
-   overflow: hidden;
-}
-#navmenu1 .topbar{
-  height: 100%;
-  padding: 0 16px;
-}
-
-#navmenu1 .social-link{
-  color: white;
-  font-size: 18px;
-  line-height: 1;      /* prevents vertical “extra space” */
-  display: inline-flex;
-  align-items: center;
-}
-
-/* MAIN NAVBAR */
-#navmenu{
-  background-color: rgb(240, 227, 233);
-  position: fixed;
-top: calc(var(--topbar-h) + var(--nav-gap));
-  left: 0;
-  width: 100%;
-  min-height: var(--mainnav-h);
-  z-index: 3500;
-  padding: 6px 0;
-}
-
-/* container-fluid is what you use in HTML */
-#navmenu .container-fluid{
-  min-height: var(--mainnav-h);
-  display: flex;
-  align-items: center;
-  position: relative; /* anchor for absolute collapse panel */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Playfair Display", serif;
 }
 
 
-/* Keep hamburger at far right */
-#navmenu .navbar-toggler{
-  margin-left: auto;
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+    --topbar-h: 27px;
+    --mainnav-h: 82px;
+    --nav-gap: 0px;
+
+    --topbar-color: rgb(176, 106, 155);
+    --navbar-color: rgb(240, 227, 233);
 }
 
-/* reset collapse spacing */
-#navmenu .navbar-collapse{
-  background: rgb(240, 227, 233);
-  margin: 0;
-  padding: 0;
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body {
+    margin: 0;
+
+    /* deja espacio para las dos barras fijas */
+    padding-top: calc(
+        var(--topbar-h) +
+        var(--nav-gap) +
+        var(--mainnav-h)
+    );
+
+    overflow-x: hidden;
 }
 
-/* nav list base */
-#navmenu .navbar-nav{
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-/* Base collapse reset */
-.navbar-collapse{
-  padding: 0;
-  margin: 0;
-}
 
-/* Base nav list */
-.navbar-nav{
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
+/* =====================================================
+   TOP BAR
+===================================================== */
 
-/* Link styling */
-#navmenu .nav-link{
-  color: black !important;
-  margin: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
+#navmenu1 {
+    background-color: var(--topbar-color);
 
-/* Hover only (your old selector was affecting .nav-item always) */
-#navmenu .nav-link:hover{
-  color: white !important;
-}
-
-/* ===== DESKTOP (>= 992px) ===== */
-@media (min-width: 992px){
-  #navbar.nave-collapse{
-    display: flex !important;
-    justify-content: flex-end;
-  }
-
-  #navmenu .navbar-nav{
-    flex-direction: row;
-    
-  }
-}
-
-/* ===== MOBILE (< 992px): dropdown under hamburger + centered ===== */
-@media (max-width: 991.98px){
-     
-  /* The dropdown panel */
-  #navmenu .navbar-collapse{
-    position: absolute;
-    top: calc(100% - 1px); /* removes the visible “gap line” */
+    position: fixed;
+    top: 0;
     left: 0;
-    right: 0;                /* full width under navbar */
-    background: rgb(240, 227, 233);
-    padding: 12px 16px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      border-top: 1px solid rgba(0,0,0,0.08);
-      z-index: 3600;
-   
-  }
-  
-        #fotosinicio{
-    display: flex !important;
-   flex-direction: column !important; /* stack vertically */
-    align-items: stretch important; /* stretch to full width */
-    justify-content: flex-start;
-    gap: 10px;
 
-  #fotosinicio > img{
-   width: 100% !important; /* full width on mobile */
-   max-width: 100%;
-   margin-right: 0;
-   display: block;
-  }
-}
-  
-
-  /* Stack items and center them */
-  #navmenu .navbar-collapse .navbar-nav{
-    flex-direction: column !important;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-  #navmenu .navbar-collapse .nav-link{
     width: 100%;
-    text-align: center;
-  }
-}
+    height: var(--topbar-h);
 
-/* =========================
-   SEARCH FORM
-========================= */
-.search-form{
-  display: flex;
-  gap: 8px;
-}
+    z-index: 5000;
 
-/* Large screens: search form on the right side of navbar */
-@media (min-width: 992px){
-  .search-form{
-    display: flex !important;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0;
-    width: auto;
-  }
-}
-
-/* Small screens: search form at the top right of navbar */
-@media (max-width: 991.98px){
-  .search-form{
     display: flex;
-    width: auto;
-    position: absolute;
-    top: -40px;
-    right: 85px;
-    gap: 8px;
-    background: transparent;
-    margin: 0;
-    padding: 0;
-  }
+    align-items: center;
 }
 
-/* Search input and button styling */
-.search-input{
-  width: 150px;
-  padding: 8px 10px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  font-size: 14px;
-  background-color: white;
+
+#navmenu1 .topbar {
+    height: 100%;
+
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
-.search-input::placeholder{
-  color: rgba(0, 0, 0, 0.5);
+
+#navmenu1 .social-link {
+    color: white;
+
+    font-size: 18px;
+    line-height: 1;
+
+    display: inline-flex;
+    align-items: center;
+
+    text-decoration: none;
 }
 
-/* Small screens: reduce search input width */
-@media (max-width: 991.98px){
-  .search-input{
-    width: 120px;
-    padding: 6px 8px;
-    font-size: 12px;
-  }
-}
 
-.search-button{
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  color: black;
-  font-size: 16px;
-  padding: 5px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/* =====================================================
+   NAVBAR PRINCIPAL
+===================================================== */
 
-.search-button:hover{
-  opacity: 0.7;
-}
+#navmenu {
+    background-color: var(--navbar-color);
 
-/* =========================
-   TEXT OVERLAY
-========================= */
-.text-overlay{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 30px;
-  text-decoration: none;
-}
+    position: fixed;
 
-/* =========================
-   CAROUSEL
-========================= */
-.carousel-inner img{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-  border-radius: 50%;
-}
-
-/*Hero carousel images only squere, no padding*/
-#carouselinicio .carousel-item img{
-  border-radius: 0 !important; /* override if needed */
-  padding: 0 !important;
-  width: 100%;
-  height: 70vh;
-  object-fit: cover;
-  display: block;
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer{
-  bottom: 0;
-  width: 100%;
-  background-color: rgb(240, 227, 233) !important;
-  padding: 10px 0;
-  text-align: center;
-  color: black;
-  height: 90px;
-}
-
-/* If you meant paragraph tags, use p not .p (class). Keeping yours as-is: */
-.p{
-  display: inline-block;
-}
-
-/* Responsive tweaks for very small screens */
-@media (max-width: 480px){
-  #navmenu{
-    padding: 10px 20px;
-  }
-
-  .navbar-nav{
-    gap: 10px;
-    padding: 10px 20px;
-  }
-}
-/* =========================
-   GLOBAL RESET
-========================= */
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Playfair Display", serif;
-}
-
-/* =========================
-   NAVBAR (CLEAN + FIXED)
-========================= */
-#navmenu{
-  background-color: rgb(240, 227, 233);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px 20px;
-  z-index: 1000;
-}
-
-/* Let Bootstrap layout work; we only align items */
-#navmenu .container{
-  display: flex !important;
-  align-items: center;
-  position: relative; /* anchor for absolute elements (collapse + search form) */
-}
-
-/* Keep hamburger at far right */
-#navmenu .navbar-toggler{
-  margin-left: auto !important;
-}
-
-/* Base collapse reset */
-.navbar-collapse{
-  padding: 0;
-  margin: 0;
-}
-
-/* Base nav list */
-.navbar-nav{
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-/* Link styling */
-#navmenu .nav-link{
-  color: black !important;
-  margin: 0;
-}
-
-/* Hover only (your old selector was affecting .nav-item always) */
-#navmenu .nav-link:hover{
-  color: white !important;
-}
-
-/* ===== DESKTOP (>= 992px) ===== */
-@media (min-width: 992px){
-  .navbar-collapse{
-    display: flex !important;
-    justify-content: flex-end;
-  }
-
-  .navbar-nav{
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-}
-
-/* ===== MOBILE (< 992px): dropdown under hamburger + centered ===== */
-@media (max-width: 991.98px){
-  /* The dropdown panel */
-  #navmenu .navbar-collapse{
-    position: absolute;
-    top: 100%;
+    top: var(--topbar-h);
     left: 0;
-    right: 0;                /* full width under navbar */
-    background: rgb(240, 227, 233);
-    padding: 12px 16px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    z-index: 999;
-  }
 
-  /* Stack items and center them */
-  #navmenu .navbar-collapse .navbar-nav{
-    flex-direction: column;
+    width: 100%;
+    min-height: var(--mainnav-h);
+
+    z-index: 4000;
+
+    padding: 6px 0;
+}
+
+
+#navmenu .container-fluid {
+    min-height: var(--mainnav-h);
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+
+/* =====================================================
+   NAVBAR LINKS
+===================================================== */
+
+#navmenu .navbar-collapse {
+    background-color: var(--navbar-color);
+}
+
+
+#navmenu .navbar-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+#navmenu .nav-link {
+    color: black !important;
+
+    padding: 10px 8px;
+
+    white-space: nowrap;
+}
+
+
+#navmenu .nav-link:hover {
+    opacity: 0.65;
+}
+
+
+/* =====================================================
+   HAMBURGER
+===================================================== */
+
+#navmenu .navbar-toggler {
+    margin-left: auto;
+}
+
+
+/* =====================================================
+   BUSCADOR
+===================================================== */
+
+.search-wrapper {
+    position: relative;
+
+    width: 210px;
+    min-width: 210px;
+
+    margin-left: 15px;
+}
+
+
+.search-form {
+    position: static;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    width: 100%;
+}
+
+
+.search-input {
+    width: 160px;
+
+    padding: 7px 9px;
+
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+
+    background-color: white;
+
+    font-size: 13px;
+}
+
+
+.search-input::placeholder {
+    color: rgba(0, 0, 0, 0.45);
+}
+
+
+.search-button {
+    background: transparent;
+
+    border: none;
+
+    color: black;
+
+    font-size: 17px;
+
+    padding: 5px 7px;
+
+    cursor: pointer;
+
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-  }
 }
 
-/* =========================
-   SEARCH FORM
-========================= */
-.search-form{
-  display: flex;
-  gap: 8px;
+
+.search-button:hover {
+    opacity: 0.6;
 }
 
-/* Large screens: search form on the right side of navbar */
-@media (min-width: 992px){
-  .search-form{
-    display: flex !important;
+
+/* =====================================================
+   RESULTADOS DEL BUSCADOR
+===================================================== */
+
+.search-results {
+    display: none;
+
     position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0;
-    width: auto;
-  }
+
+    top: calc(100% + 8px);
+    right: 0;
+
+    width: 290px;
+    max-height: 320px;
+
+    overflow-y: auto;
+
+    background-color: white;
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.15);
+
+    z-index: 10000;
 }
 
-/* Small screens: search form at the top right of navbar */
-@media (max-width: 991.98px){
-  .search-form{
+
+.search-result-item {
     display: flex;
-    width: auto;
-    position: absolute;
-    top: -40px;
-    right: 85px;
-    gap: 8px;
-    background: transparent;
-    margin: 0;
-    padding: 0;
-  }
-}
+    align-items: center;
 
-/* Search input and button styling */
-.search-input{
-  width: 150px;
-  padding: 8px 10px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  font-size: 14px;
-  background-color: white;
-}
-
-.search-input::placeholder{
-  color: rgba(0, 0, 0, 0.5);
-}
-
-/* Small screens: reduce search input width */
-@media (max-width: 991.98px){
-  .search-input{
-    width: 120px;
-    padding: 6px 8px;
-    font-size: 12px;
-  }
-}
-
-.search-button{
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  color: black;
-  font-size: 16px;
-  padding: 5px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.search-button:hover{
-  opacity: 0.7;
-}
-
-/* =========================
-   TEXT OVERLAY
-========================= */
-.text-overlay{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 30px;
-  text-decoration: none;
-}
-
-/* =========================
-   CAROUSEL
-========================= */
-.carousel-inner img{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-  border-radius: 90%;
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer{
-  bottom: 0;
-  width: 100%;
-  background-color: rgb(240, 227, 233) !important;
-  padding: 10px 0;
-  text-align: center;
-  color: black;
-  height: 90px;
-}
-
-/* If you meant paragraph tags, use p not .p (class). Keeping yours as-is: */
-.p{
-  display: inline-block;
-}
-
-/* Responsive tweaks for very small screens */
-@media (max-width: 480px){
-  #navmenu{
-    padding: 10px 20px;
-  }
-
-  .navbar-nav{
     gap: 10px;
-    padding: 10px 20px;
-  }
+
+    padding: 8px;
+
+    color: #222;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+
+.search-result-item:hover {
+    background-color: #f8f4f6;
+}
+
+
+/* MUY IMPORTANTE:
+   evita que la foto de búsqueda se haga gigante */
+.search-result-img {
+    display: block;
+
+    width: 45px !important;
+    height: 55px !important;
+
+    min-width: 45px;
+    max-width: 45px;
+
+    object-fit: cover;
+
+    border-radius: 4px;
+
+    padding: 0;
+    margin: 0;
+}
+
+
+.search-result-info {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    flex: 1;
+}
+
+
+.search-result-title {
+    font-size: 13px;
+    font-weight: 600;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.search-result-price {
+    margin-top: 3px;
+
+    font-size: 12px;
+}
+
+
+.search-message {
+    margin: 0;
+
+    padding: 12px;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   CARRUSEL PRINCIPAL
+===================================================== */
+
+#carouselinicio {
+    width: 100%;
+}
+
+
+#carouselinicio .carousel-item img {
+    display: block;
+
+    width: 100%;
+
+    height: 70vh;
+
+    object-fit: cover;
+
+    padding: 0;
+
+    border-radius: 0;
+}
+
+
+/* =====================================================
+   CARRUSELES DE CATEGORÍAS
+===================================================== */
+
+#carouselSeduction1 img,
+#carouselSeduction2 img,
+#carouselSeduction3 img,
+#carouselSeduction4 img {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    padding: 10px;
+
+    border-radius: 50%;
+}
+
+
+/* =====================================================
+   TEXTO SOBRE CARRUSELES
+===================================================== */
+
+.text-overlay {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: white;
+
+    font-size: 30px;
+
+    text-decoration: none;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   PÁGINA DE PRODUCTO
+===================================================== */
+
+#productRoot {
+    display: block;
+
+    width: 100%;
+
+    clear: both;
+}
+
+
+#productRoot .row {
+    align-items: flex-start;
+}
+
+
+/* Imagen principal del producto */
+#productRoot #mainProductImg {
+    display: block;
+
+    width: 100% !important;
+    max-width: 450px !important;
+
+    height: auto !important;
+    max-height: 540px;
+
+    object-fit: contain !important;
+
+    margin: 0 auto;
+
+    padding: 0;
+
+    border-radius: 0;
+}
+
+
+/* Miniaturas del producto */
+#productRoot .product-thumb {
+    width: 70px !important;
+    height: 70px !important;
+
+    object-fit: cover;
+
+    border-radius: 4px;
+
+    padding: 2px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    width: 100%;
+
+    background-color: var(--navbar-color) !important;
+
+    padding: 12px 0;
+
+    text-align: center;
+
+    color: black;
+
+    margin-top: 30px;
+}
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 992px) {
+
+    #navmenu .navbar-collapse {
+        display: flex !important;
+        align-items: center;
+    }
+
+    #navmenu .navbar-nav {
+        flex-direction: row;
+    }
+}
+
+
+/* =====================================================
+   TABLET / MÓVIL
+===================================================== */
+
+@media (max-width: 991.98px) {
+
+    :root {
+        --mainnav-h: 65px;
+    }
+
+
+    #navmenu .navbar-collapse {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        padding: 15px;
+
+        background-color: var(--navbar-color);
+
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+
+    #navmenu .navbar-nav {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 8px;
+
+        width: 100%;
+    }
+
+
+    #navmenu .nav-link {
+        text-align: center;
+    }
+
+
+    .search-wrapper {
+        width: 180px;
+        min-width: 180px;
+
+        margin: 10px auto 0;
+    }
+
+
+    .search-input {
+        width: 140px;
+    }
+
+
+    .search-results {
+        left: 50%;
+        right: auto;
+
+        transform: translateX(-50%);
+
+        width: 270px;
+    }
+
+
+    #carouselinicio .carousel-item img {
+        height: 55vh;
+    }
+}
+
+
+/* =====================================================
+   TELÉFONOS PEQUEÑOS
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .search-wrapper {
+        width: 160px;
+        min-width: 160px;
+    }
+
+
+    .search-input {
+        width: 120px;
+
+        font-size: 12px;
+    }
+
+
+    .search-results {
+        width: 250px;
+    }
+
+
+    #carouselinicio .carousel-item img {
+        height: 45vh;
+    }
+
+
+    .text-overlay {
+        font-size: 22px;
+    }
 }

@@ -30,7 +30,7 @@ const moneyCRC = (n) =>
 
 function cardHTML(p) {
   const img = p.images?.[0] ?? "";
-  const href = `product.html?cat=panties&id=${encodeURIComponent(p.id)}`;
+  const href = `product.html?id=${encodeURIComponent(p.id)}`;
 
   return `
     <div class="col">
