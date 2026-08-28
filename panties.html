@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Seduction Night Lingerie</title>
+    <title>Panties | Seduction Night Lingerie</title>
 
     <!-- Bootstrap -->
     <link
@@ -13,8 +13,11 @@
         rel="stylesheet"
     >
 
-    <!-- Estilos -->
+    <!-- Estilos generales -->
     <link href="Styles.css" rel="stylesheet">
+
+    <!-- Estilos específicos de panties -->
+    <link rel="stylesheet" href="css/panties.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,7 +90,7 @@
             <a class="navbar-brand" href="index.html"></a>
 
 
-            <!-- Botón menú móvil -->
+            <!-- Menú móvil -->
             <button
                 class="navbar-toggler"
                 type="button"
@@ -107,9 +110,14 @@
                 <ul class="navbar-nav mx-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="lingerie.html">
+
+                        <a
+                            class="nav-link"
+                            href="lingerie.html"
+                        >
                             LENCERÍA
                         </a>
+
                     </li>
 
 
@@ -127,22 +135,34 @@
                             SALES
                         </a>
 
+
                         <ul class="dropdown-menu">
 
                             <li>
-                                <a class="dropdown-item" href="accesories.html">
+                                <a
+                                    class="dropdown-item"
+                                    href="accesories.html"
+                                >
                                     ACCESORIES
                                 </a>
                             </li>
 
+
                             <li>
-                                <a class="dropdown-item" href="panties.html">
+                                <a
+                                    class="dropdown-item"
+                                    href="panties.html"
+                                >
                                     PANTIES
                                 </a>
                             </li>
 
+
                             <li>
-                                <a class="dropdown-item" href="babydolls.html">
+                                <a
+                                    class="dropdown-item"
+                                    href="babydolls.html"
+                                >
                                     BABYDOLLS
                                 </a>
                             </li>
@@ -152,7 +172,7 @@
                     </li>
 
 
-                    <!-- LOGO / HOME -->
+                    <!-- LOGO -->
                     <li class="nav-item">
 
                         <a
@@ -216,7 +236,7 @@
                     </form>
 
 
-                    <!-- Resultados del buscador -->
+                    <!-- Aquí aparecen los resultados -->
                     <div
                         id="searchResults"
                         class="search-results"
@@ -230,49 +250,176 @@
 
     </nav>
 
-  <!-- CAROUSEL -->
-  <div id="carouselinicio" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="img/Ropa Interior/ropaintroja3.JPG" class="d-block w-100" alt="Inicio 1">
-      </div>
-      <div class="carousel-item">
-        <img src="img/Ropa Interior/IMG_1249.jpg" class="d-block w-100" alt="Inicio 2">
-      </div>
-      <div class="carousel-item">
-        <img src="img/Lingerie/IMG_0867.jpg" class="d-block w-100" alt="Inicio 3">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselinicio" data-bs-slide="prev"></button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselinicio" data-bs-slide="next"></button>
-  </div>
 
-  <!-- TITLE -->
-  <div class="container my-4">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2>PANTIES</h2>
-      </div>
-    </div>
-  </div>
+    <!-- ========================= -->
+    <!-- CARRUSEL PRINCIPAL -->
+    <!-- ========================= -->
 
-  <!-- GRID (dinámico) -->
-  <section class="container my-4">
-    <div id="pantiesGrid" class="row row-cols-2 row-cols-md-4 g-3"></div>
-  </section>
+    <div
+        id="carouselinicio"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+        data-bs-interval="3000"
+        data-bs-pause="false"
+    >
 
-  <footer class="bg-subtle text-center py-0">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h7>@2024, Seduction Night Lingerie</h7>
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+
+                <img
+                    src="img/Ropa Interior/ropaintroja3.JPG"
+                    class="d-block w-100"
+                    alt="Colección Panties 1"
+                >
+
+            </div>
+
+
+            <div class="carousel-item">
+
+                <img
+                    src="img/Ropa Interior/IMG_1249.jpg"
+                    class="d-block w-100"
+                    alt="Colección Panties 2"
+                >
+
+            </div>
+
+
+            <div class="carousel-item">
+
+                <img
+                    src="img/Lingerie/IMG_0867.jpg"
+                    class="d-block w-100"
+                    alt="Colección Panties 3"
+                >
+
+            </div>
+
         </div>
-      </div>
-    </div>
-  </footer>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+        <!-- Flecha izquierda -->
+        <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselinicio"
+            data-bs-slide="prev"
+        >
+            <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+            ></span>
+
+            <span class="visually-hidden">
+                Anterior
+            </span>
+        </button>
+
+
+        <!-- Flecha derecha -->
+        <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselinicio"
+            data-bs-slide="next"
+        >
+            <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+            ></span>
+
+            <span class="visually-hidden">
+                Siguiente
+            </span>
+        </button>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- TÍTULO -->
+    <!-- ========================= -->
+
+    <section class="container my-4">
+
+        <div class="row">
+
+            <div class="col-12 text-center">
+
+                <h2>
+                    PANTIES
+                </h2>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- PRODUCTOS -->
+    <!-- ========================= -->
+
+    <section class="container my-4">
+
+        <!--
+            panties.js coloca aquí
+            todos los productos dinámicamente
+        -->
+
+        <div
+            id="pantiesGrid"
+            class="row row-cols-2 row-cols-md-4 g-3"
+        ></div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
+    <footer class="text-center py-3">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <p class="mb-0">
+                        @2024, Seduction Night Lingerie
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ========================= -->
+    <!-- SCRIPTS -->
+    <!-- ========================= -->
+
+    <!-- Bootstrap -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- Carga los productos de Panties -->
+    <script src="js/panties.js"></script>
+
+
+    <!-- Buscador -->
+    <script src="js/search.js"></script>
+
 </body>
+
 </html>
