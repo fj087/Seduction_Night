@@ -6,19 +6,57 @@ if (!grid) {
   console.error("No existe #pantiesGrid en el HTML");
 } else {
   fetch("data/product.json")
-    .then((r) => {
-      if (!r.ok) throw new Error(`No se pudo abrir data/product.json (HTTP ${r.status})`);
-      return r.json();
-    })
-    .then((products) => {
-      grid.innerHTML = products.map(cardHTML).join("");
-      // DEBUG: ver enlaces generados
-      document.querySelectorAll('a.stretched-link[href^="product.html"]').forEach(a => console.log("Link:", a.href));
-    })
-    .catch((err) => {
-      console.error(err);
-      grid.innerHTML = `<div class="col-12 text-danger">Error cargando productos. Revisa ruta y consola.</div>`;
-    });
+  .then((response) => response.json())
+  .then((products) => {
+
+    const panties = products.filter(
+      (product) => product.category === "panties"
+    );
+
+    pantiesGrid.innerHTML = panties
+      .map((product) => {
+        return `
+          <div class="col">
+
+            <div class="card h-100">
+
+              <a href="product.html?id=${product.id}">
+
+                <img
+                  src="${product.images?.[0] ?? ""}"
+                  class="card-img-top"
+                  alt="${product.title}"
+                >
+
+              </a>
+
+              <div class="card-body text-center">
+
+                <h5>
+                  ${product.title}
+                </h5>
+
+                <p>
+                  ${moneyCRC(product.price)}
+                </p>
+
+                <a
+                  href="product.html?id=${product.id}"
+                  class="btn btn-outline-dark w-100"
+                >
+                  VER PRODUCTO
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+        `;
+      })
+      .join("");
+
+  });
 }
 
 const moneyCRC = (n) =>

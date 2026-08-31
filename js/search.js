@@ -73,6 +73,15 @@ function showResults(results) {
         `;
 
         searchResults.style.display = "block";
+
+        //Borrar lo que la persona escribio en el buscador
+        searchInput.value = "";
+
+        //Despues de 2.5 seguntos eliminar el mensaje
+        setTimeout(() => {
+            searchResults.innerHTML = "";
+            searchResults.style.display = "none";
+        }, 2500);
         return;
     }
 

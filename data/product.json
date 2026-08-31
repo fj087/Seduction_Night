@@ -2,50 +2,114 @@
   {
     "id": "set-sensacion",
     "title": "Set sensación",
+     "category": "panties",
     "price": 12150,
     "oldPrice": 13500,
     "discount": 10,
     "images": [ "img/Ropa Interior/ropaintrojaGrnd1.jpg",
       "img/Ropa Interior/IMG_2009.jpg"
     ],
-    "description": "Set elegante y cómodo."
+    "description": "Set elegante y cómodo.",
+     "sizes": ["S", "M", "L"]
   },
   {
     "id": "set-encage",
     "title": "Set encaje rojo",
+     "category": "panties",
     "price": 13500,
     "oldPrice": 15000,
     "discount": 10,
     "images": [ "img/Ropa Interior/ropaintroroja1 (3).jpg" ],
-    "description": "Encaje rojo con diseño sensual."
+    "description": "Encaje rojo con diseño sensual.",
+    "sizes": ["S", "M", "L"]
   },
   {
     "id": "set-blanco",
     "title": "Set encaje blanco",
+     "category": "panties",
     "price": 12000,
     "oldPrice": 13500,
     "discount": 10,
     "images": [  "img/Ropa Interior/ropaintrojaGrnd1.jpg" ],
-    "description": "Encaje blanco delicado."
+    "description": "Encaje blanco delicado.",
+    "sizes": ["S", "M", "L"]
   },
    {
     "id": "set-lenceria",
     "title": "Set encaje blanco con flores",
+     "category": "panties",
     "price": 12000,
     "oldPrice": 23500,
     "discount": 10,
     "images": ["img/Lingerie/Foto 5-9-24, 4 42 12 p.m. (1).jpg",
               "img/Lingerie/Foto 5-9-24, 4 42 12 p.m. (2).jpg"
               ],
-    "description": "Encaje blanco delicado."
+    "description": "Encaje blanco delicado.",
+    "sizes": ["S", "M", "L"]
   },
 {
     "id": "set-lenceria",
     "title": "Set encaje blanco",
+     "category": "panties",
     "price": 12000,
     "oldPrice": 23500,
     "discount": 10,
     "images": ["img/Lingerie/Foto 5-9-24, 4 42 13 p.m. (13).jpg"],
-    "description": "Encaje blanco delicado."
-  }
+    "description": "Encaje blanco delicado.",
+    "sizes": ["S", "M", "L"]
+  },
+
+  {
+  "id": "arnes-negro-01",
+  "title": "Arnés de perlas",
+  "category": "accesorios",
+  "price": 8500,
+  "oldPrice": 10000,
+  "discount": 15,
+  "images": [
+    "img/Accesorios/IMG_2024.jpg"
+  ],
+  "description": "Arnés perlas ajustable.",
+  "sizes": ["Talla unica"]
+},
+
+  {
+  "id": "arnes-negro-02",
+  "title": "Accesorio de perlas ajustableo",
+  "category": "accesorios",
+  "price": 8500,
+  "oldPrice": 10000,
+  "discount": 15,
+  "images": [
+    "img/Accesorios/IMG_2027.jpg"
+  ],
+  "description": "Accesorio de perlas ajustable.",
+  "sizes": ["Talla unica"]
+},
+  {
+  "id": "arnes-negro-03",
+  "title": "Accesorio a cuerpo",
+  "category": "accesorios",
+  "price": 10500,
+  "oldPrice": 12000,
+  "discount": 15,
+  "images": [
+    "img/Accesorios/IMG_0849.jpg"
+  ],
+  "description": "Accesorio a cuerpo.",
+  "sizes": ["Talla unica"]
+},
+ {
+  "id": "arnes-negro-04",
+  "title": "Accesorio de escote",
+  "category": "accesorios",
+  "price": 10500,
+  "oldPrice": 12000,
+  "discount": 15,
+  "images": [
+    "img/Accesorios/IMG_0877.jpg"
+  ],
+  "description": "Accesorio de escote.",
+  "sizes": ["Talla unica"]
+}
 ]

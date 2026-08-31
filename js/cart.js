@@ -86,6 +86,9 @@ function renderCart() {
                   <p class="card-text mb-1">
                     Precio: ${moneyCRC(item.price)}
                   </p>
+                  
+                  <p class="card-text mb-1">
+                  Talla: <strong>${item.size || "No especificada"}</strong>
 
                   <p class="card-text mb-1">
                     Subtotal: <strong>${moneyCRC(subtotal)}</strong>
@@ -137,9 +140,13 @@ function renderCart() {
         <h4>${moneyCRC(total)}</h4>
       </div>
 
-      <button class="btn btn-dark w-100 mt-3">
-        FINALIZAR COMPRA
+      <button 
+      class= "btn btn-success w-100 mt-3"
+      onclick="finalizarCompraWhatsapp()">
+      <i class="fa-brands fa-whatsapp"></i> 
+      Finalizar compra por WhatsApp
       </button>
+
       <button class="btn btn-outline-dark w-100 mt-2" onclick ="contuinarComprando()">
         CONTINUAR COMPRANDO
       </button>
@@ -217,4 +224,64 @@ function clearCart() {
 // Función para continuar comprando, redirigiendo a la página principal
 function contuinarComprando() {
   window.location.href = "panties.html";
+}
+
+//============================================================================
+// FINALIZAR COMPRA POR WHATSAPP
+//============================================================================
+
+function finalizarCompraWhatsapp() {
+
+  const cart = getCart();
+
+  // Verificamos que haya productos en el carrito
+  if (cart.length === 0) {
+    alert("Tu carrito está vacío. Agrega productos antes de finalizar la compra.");
+    return;
+  }
+
+  // Número de WhatsApp de Seduction Night
+  // Costa Rica = 506
+  const phoneNumber = "50672714390";
+
+  // Variable para calcular el total
+  let total = 0;
+
+  // Encabezado del mensaje
+  let message = "Hola, quiero realizar este pedido en Seduction Night 💕\n\n";
+
+  message += "🛍️ *Mi pedido:*\n\n";
+
+  // Recorremos los productos
+  cart.forEach((item, index) => {
+
+    const subtotal = item.price * item.quantity;
+
+    total += subtotal;
+
+    message += `${index + 1}. *${item.title}*\n`;
+
+    message += `Talla: ${item.size || "No especificada"}\n`;
+
+    message += `Cantidad: ${item.quantity}\n`;
+
+    message += `Precio: ${moneyCRC(item.price)}\n`;
+
+    message += `Subtotal: ${moneyCRC(subtotal)}\n\n`;
+  });
+
+  // Total
+  message += `💰 *Total: ${moneyCRC(total)}*\n\n`;
+
+  message += "¿Me pueden ayudar a confirmar disponibilidad y entrega?";
+
+  // Convertimos el mensaje para WhatsApp
+  const encodedMessage = encodeURIComponent(message);
+
+  // Creamos enlace
+  const whatsappURL =
+    `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+  // Abrimos WhatsApp
+  window.open(whatsappURL, "_blank");
 }

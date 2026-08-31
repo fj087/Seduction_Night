@@ -130,6 +130,13 @@ function productHTML(p) {
   // Tomamos la primera imagen como imagen principal.
   const main = p.images?.[0] ?? "";
 
+  //Agregamos la variable selectedSize para almacenar el tamaño seleccionado por el usuario
+  const sizeHtml = (p.sizes ?? [])
+    .map(size =>
+      `<option value="${size}">
+    ${size}</option>`)
+    .join("");
+
   // Creamos las miniaturas usando todas las imágenes del producto.
   const thumbs = (p.images ?? [])
     .map(
@@ -199,13 +206,30 @@ function productHTML(p) {
               ${moneyCRC(p.price)}
             </span>
 
-            ${
-              p.oldPrice
-                ? `<span class="ms-2 text-muted text-decoration-line-through">
+            ${p.oldPrice
+      ? `<span class="ms-2 text-muted text-decoration-line-through">
                     ${moneyCRC(p.oldPrice)}
                   </span>`
-                : ""
-            }
+      : ""
+    }
+<!-- Agregamos el select para elegir talla -->
+   <div class="mb-3">
+
+  <label for="sizeSelect" class="form-label fw-semibold">
+    Talla:
+  </label>
+
+  <select id="sizeSelect" class="form-select">
+
+    <option value="">
+      Seleccione una talla
+    </option>
+
+    ${sizeHtml}
+
+  </select>
+
+</div>
           </div>
 
           <!-- Botón para agregar al carrito sin salir de la página -->
@@ -313,6 +337,23 @@ function setupGallery(images) {
 // Si no existe, lo agrega con cantidad 1.
 // =====================================================
 function addToCart(product) {
+  // Buscar el selector de talla y obtener el valor seleccionado
+  const sizeSelect = document.getElementById("sizeSelect");
+  // Obtener la talla seleccionada 
+  const selectedSize = sizeSelect ? sizeSelect.value : "";
+  // Si la persona no selecciono talla, mostramos un mensaje de error y no agregamos al carrito.
+  if (!selectedSize) {
+    const cartMessage = document.getElementById("cartMessage");
+    if (cartMessage) {
+      cartMessage.innerHTML = `
+        <div class="alert alert-danger py-2">
+          Por favor, seleccione una talla.
+        </div>
+      `;
+    }
+    return;
+  }
+
   // Obtenemos el carrito guardado.
   // Si no existe, usamos un arreglo vacío.
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -332,6 +373,7 @@ function addToCart(product) {
       oldPrice: product.oldPrice,
       discount: product.discount,
       image: product.images?.[0] ?? "",
+      size: selectedSize,
       quantity: 1
     });
   }
