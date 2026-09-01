@@ -685,3 +685,37 @@ letter-spacing: 6px;
 
 z-index: 9;
 }
+
+/*======================================================
+   BENEFICIONS Y DESCUNETOS
+=====================================================*/
+.benefit-item {
+  text-decoration: none;
+  color: inherit;
+  display:block;
+}
+.benefit-link {
+  text-decoration: none;
+  color: inherit;
+  display:block;
+}
+.benefit-link:visited{
+  color: inherit;
+}
+.benefit-link:hover{
+  color: inherit;
+  text-decoration: none;
+}
+.benefit-link:active {
+  color: inherit;
+  
+}
+
+/* ENVIOS TEXTO*/
+.envios-text {
+  max-width: 600px;
+  font-size: 0.8rem;
+  margin: 0 auto;
+  text-align: justify;
+  line-height: 1.6;
+}
