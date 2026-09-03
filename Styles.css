@@ -719,3 +719,310 @@ z-index: 9;
   text-align: justify;
   line-height: 1.6;
 }
+
+/* =====================================================
+   CHATBOT SEDUCTION NIGHT
+===================================================== */
+
+
+/* BOTÓN FLOTANTE */
+
+.chatbot-button {
+    position: fixed;
+
+    right: 25px;
+    bottom: 100px;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+    border: none;
+
+    background-color: rgb(176, 106, 155);
+    color: white;
+
+    font-size: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    z-index: 9998;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0, 0, 0, 0.20);
+}
+
+
+/* POPUP */
+
+.help-popup {
+    position: fixed;
+
+    right: 25px;
+    bottom: 170px;
+
+    width: 260px;
+
+    padding: 20px;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 6px 25px
+        rgba(0, 0, 0, 0.18);
+
+    z-index: 9999;
+
+    display: none;
+}
+
+
+.help-popup.show {
+    display: block;
+}
+
+
+.help-popup p {
+    margin-bottom: 12px;
+
+    font-size: 17px;
+
+    text-align: center;
+}
+
+
+.help-popup-close {
+    position: absolute;
+
+    right: 8px;
+    top: 5px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 20px;
+}
+
+
+.help-popup-button {
+    width: 100%;
+
+    border: none;
+
+    padding: 9px;
+
+    background-color: rgb(240, 227, 233);
+
+    color: #333;
+
+    border-radius: 5px;
+}
+
+
+/* VENTANA CHAT */
+
+.chatbot-window {
+    position: fixed;
+
+    right: 25px;
+    bottom: 170px;
+
+    width: 340px;
+    max-width: calc(100% - 40px);
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(0, 0, 0, 0.22);
+
+    overflow: hidden;
+
+    z-index: 10000;
+
+    display: none;
+}
+
+
+.chatbot-window.show {
+    display: block;
+}
+
+
+/* HEADER */
+
+.chatbot-header {
+    background-color: rgb(240, 227, 233);
+
+    padding: 14px 16px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.chatbot-header strong {
+    display: block;
+}
+
+
+.chatbot-header small {
+    display: block;
+    font-size: 12px;
+}
+
+
+.chatbot-header button {
+    border: none;
+    background: transparent;
+
+    font-size: 24px;
+}
+
+
+/* MENSAJES */
+
+.chatbot-messages {
+    height: 280px;
+
+    padding: 15px;
+
+    overflow-y: auto;
+
+    background-color: #fafafa;
+}
+
+
+.bot-message,
+.user-message {
+    max-width: 82%;
+
+    padding: 10px 12px;
+
+    margin-bottom: 10px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+.bot-message {
+    background-color: rgb(240, 227, 233);
+
+    margin-right: auto;
+}
+
+
+.user-message {
+    background-color: #333;
+
+    color: white;
+
+    margin-left: auto;
+}
+
+
+/* LINKS DEL BOT */
+
+.bot-message a {
+    color: rgb(140, 70, 120);
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+/* OPCIONES RÁPIDAS */
+
+.chatbot-options {
+    padding: 8px;
+
+    display: flex;
+
+    gap: 5px;
+
+    flex-wrap: wrap;
+
+    border-top: 1px solid #eee;
+}
+
+
+.chatbot-options button {
+    border: 1px solid #ddd;
+
+    background-color: white;
+
+    padding: 5px 9px;
+
+    border-radius: 15px;
+
+    font-size: 12px;
+}
+
+
+/* INPUT */
+
+.chatbot-form {
+    display: flex;
+
+    border-top: 1px solid #ddd;
+}
+
+
+.chatbot-form input {
+    flex: 1;
+
+    border: none;
+
+    padding: 12px;
+
+    outline: none;
+
+    font-size: 16px;
+}
+
+
+.chatbot-form button {
+    width: 50px;
+
+    border: none;
+
+    background-color: rgb(176, 106, 155);
+
+    color: white;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .chatbot-window {
+        right: 15px;
+        bottom: 160px;
+
+        width: calc(100% - 30px);
+    }
+
+    .help-popup {
+        right: 15px;
+    }
+
+    .chatbot-button {
+        right: 20px;
+    }
+}
