@@ -111,5 +111,120 @@
   ],
   "description": "Accesorio de escote.",
   "sizes": ["Talla unica"]
-}
+},
+{
+ "id": "arnes-negro-05",
+  "title": "Arnés de perlas",
+  "category": "descuento",
+  "price": 8500,
+  "oldPrice": 10000,
+  "discount": 15,
+  "images": [
+    "img/Accesorios/IMG_2024.jpg"
+  ],
+  "description": "Arnés perlas ajustable.",
+  "sizes": ["Talla unica"]
+},
+
+  {
+  "id": "arnes-negro-06",
+  "title": "Accesorio de perlas ajustableo",
+  "category": "descuento",
+  "price": 8500,
+  "oldPrice": 10000,
+  "discount": 15,
+  "images": [
+    "img/Accesorios/IMG_2027.jpg"
+  ],
+  "description": "Accesorio de perlas ajustable.",
+  "sizes": ["Talla unica"]
+},
+  {
+  "id": "arnes-negro-07",
+  "title": "Accesorio a cuerpo",
+  "category": "descuento",
+  "price": 10500,
+  "oldPrice": 12000,
+  "discount": 15,
+  "images": [
+    "img/Accesorios/IMG_0849.jpg"
+  ],
+  "description": "Accesorio a cuerpo.",
+  "sizes": ["Talla unica"]
+},
+ {
+  "id": "arnes-negro-08",
+  "title": "Accesorio de escote",
+  "category": "descuento",
+  "price": 10500,
+  "oldPrice": 12000,
+  "discount": 15,
+  "images": [
+    "img/Accesorios/IMG_0877.jpg"
+  ],
+  "description": "Accesorio de escote.",
+  "sizes": ["Talla unica"]
+},
+ {
+    "id": "set-sensacion",
+    "title": "Set sensación",
+     "category": "descuento",
+    "price": 12150,
+    "oldPrice": 13500,
+    "discount": 10,
+    "images": [ "img/Ropa Interior/ropaintrojaGrnd1.jpg",
+      "img/Ropa Interior/IMG_2009.jpg"
+    ],
+    "description": "Set elegante y cómodo.",
+     "sizes": ["S", "M", "L"]
+  },
+  {
+    "id": "set-encage-010",
+    "title": "Set encaje rojo",
+     "category": "descuento",
+    "price": 13500,
+    "oldPrice": 15000,
+    "discount": 10,
+    "images": [ "img/Ropa Interior/ropaintroroja1 (3).jpg" ],
+    "description": "Encaje rojo con diseño sensual.",
+    "sizes": ["S", "M", "L"]
+  },
+  {
+    "id": "set-blanco-011",
+    "title": "Set encaje blanco",
+     "category": "descuento",
+    "price": 12000,
+    "oldPrice": 13500,
+    "discount": 10,
+    "images": [  "img/Ropa Interior/ropaintrojaGrnd1.jpg" ],
+    "description": "Encaje blanco delicado.",
+    "sizes": ["S", "M", "L"]
+  },
+   {
+    "id": "set-lenceria-012",
+    "title": "Set encaje blanco con flores",
+     "category": "descuento",
+    "price": 12000,
+    "oldPrice": 23500,
+    "discount": 10,
+    "images": ["img/Lingerie/Foto 5-9-24, 4 42 12 p.m. (1).jpg",
+              "img/Lingerie/Foto 5-9-24, 4 42 12 p.m. (2).jpg"
+              ],
+    "description": "Encaje blanco delicado.",
+    "sizes": ["S", "M", "L"]
+  },
+{
+    "id": "set-lenceria-013",
+    "title": "Set encaje blanco",
+     "category": "descuento",
+    "price": 12000,
+    "oldPrice": 23500,
+    "discount": 10,
+    "images": ["img/Lingerie/Foto 5-9-24, 4 42 13 p.m. (13).jpg"],
+    "description": "Encaje blanco delicado.",
+    "sizes": ["S", "M", "L"]
+  }
+
+
+
 ]
